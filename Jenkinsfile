@@ -1,1 +1,1 @@
-libPipeline()
+newLibPipeline()
