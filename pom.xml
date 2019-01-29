@@ -10,7 +10,7 @@
 
     <groupId>no.ks.fiks</groupId>
     <artifactId>svarinn2-commons</artifactId>
-    <version>1.0.12</version>
+    <version>1.0.13-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
