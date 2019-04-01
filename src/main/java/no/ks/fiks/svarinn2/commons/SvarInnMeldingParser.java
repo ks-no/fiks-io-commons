@@ -21,7 +21,7 @@ public class SvarInnMeldingParser {
                 .meldingId(requireUUIDFromHeader(properties.getHeaders(), SvarInn2Headers.MELDING_ID))
                 .meldingType(requireStringFromHeader(properties.getHeaders(), SvarInn2Headers.MELDING_TYPE))
                 .avsenderKontoId(requireUUIDFromHeader(properties.getHeaders(), SvarInn2Headers.AVSENDER_ID))
-                .mottakerKontoId(UUID.fromString(envelope.getRoutingKey()))
+                .mottakerKontoId(SvarInn2Headers.extractKontoId(envelope.getRoutingKey()))
                 .svarPaMelding(getUUIDFromHeader(properties.getHeaders(), SvarInn2Headers.SVAR_PA_MELDING_ID).getOrElse(() -> null))
                 .deliveryTag(envelope.getDeliveryTag())
                 .ttl(Long.valueOf(properties.getExpiration()))
