@@ -1,47 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>no.ks.fiks.pom</groupId>
-        <artifactId>fiks-superpom</artifactId>
-        <version>1.0.9</version>
+        <artifactId>fiks-ekstern-super-pom</artifactId>
+        <version>0.0.3</version>
     </parent>
-
     <groupId>no.ks.fiks</groupId>
     <artifactId>svarinn2-commons</artifactId>
-    <version>1.0.14-SNAPSHOT</version>
+    <version>${revision}${changelist}</version>
+    <name>Svarinn2 Commons</name>
+    <description>Konstanter og utils for svarinn2-klienter</description>
+    <url>https://github.com/ks-no/fiks-svarinn2</url>
+    <scm>
+        <connection>scm:git:git@github.com:ks-no/fiks-svarinn2-send-klient.git</connection>
+        <developerConnection>scm:git:git@github.com:ks-no/fiks-svarinn2-send-klient.git</developerConnection>
+        <url>https://github.com/ks-no/fiks-svarinn2-send-klient</url>
+    </scm>
     <properties>
-        <junit-jupiter.version>5.4.0</junit-jupiter.version>
-        <junit-platform.version>1.4.0</junit-platform.version>
-    </properties>
+        <revision>1.0.5</revision>
+        <changelist>-SNAPSHOT</changelist>
 
+        <lombok.version>1.16.18</lombok.version>
+        <vavr.version>0.10.0</vavr.version>
+        <amqp-client.version>5.6.0</amqp-client.version>
+
+        <junit-jupiter.version>5.4.0</junit-jupiter.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>com.rabbitmq</groupId>
             <artifactId>amqp-client</artifactId>
-            <version>5.3.0</version>
+            <version>${amqp-client.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
         </dependency>
         <dependency>
             <groupId>io.vavr</groupId>
             <artifactId>vavr</artifactId>
+            <version>${vavr.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit-jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
             <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
@@ -51,33 +57,16 @@
             <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-commons</artifactId>
-            <version>${junit-platform.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-launcher</artifactId>
-            <version>${junit-platform.version}</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>

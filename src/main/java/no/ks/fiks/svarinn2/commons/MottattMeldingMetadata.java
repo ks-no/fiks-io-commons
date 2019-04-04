@@ -16,6 +16,4 @@ public class MottattMeldingMetadata {
     @NonNull private Long ttl;
     @NonNull private Long deliveryTag;
     private UUID svarPaMelding;
-
-
 }
