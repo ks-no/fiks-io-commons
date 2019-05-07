@@ -5,13 +5,13 @@
   <parent>
     <groupId>no.ks.fiks.pom</groupId>
     <artifactId>fiks-ekstern-super-pom</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.8</version>
   </parent>
   <groupId>no.ks.fiks</groupId>
-  <artifactId>svarinn2-commons</artifactId>
+  <artifactId>fiks-io-commons</artifactId>
   <version>${revision}${changelist}</version>
-  <name>Svarinn2 Commons</name>
-  <description>Konstanter og utils for svarinn2-klienter</description>
+  <name>FIKS IO Commons</name>
+  <description>Konstanter og utils for FIKS IO-klienter</description>
   <url>https://github.com/ks-no/fiks-svarinn2</url>
   <scm>
     <connection>scm:git:git@github.com:ks-no/fiks-svarinn2-send-klient.git</connection>
@@ -19,12 +19,12 @@
     <url>https://github.com/ks-no/fiks-svarinn2-send-klient</url>
   </scm>
   <properties>
-    <revision>1.0.16</revision>
+    <revision>1.1.0</revision>
     <changelist>-SNAPSHOT</changelist>
     <vavr.version>0.10.0</vavr.version>
-    <junit-jupiter.version>5.4.0</junit-jupiter.version>
+    <junit-jupiter.version>5.4.2</junit-jupiter.version>
     <lombok.version>1.16.18</lombok.version>
-    <amqp-client.version>5.6.0</amqp-client.version>
+    <amqp-client.version>5.7.0</amqp-client.version>
   </properties>
   <dependencies>
     <dependency>

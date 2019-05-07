@@ -1,4 +1,4 @@
-package no.ks.fiks.svarinn2.commons;
+package no.ks.fiks.io.commons;
 
 public final class MeldingsType {
 

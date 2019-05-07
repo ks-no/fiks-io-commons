@@ -1,4 +1,4 @@
-package no.ks.fiks.svarinn2.commons;
+package no.ks.fiks.io.commons;
 
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Envelope;
@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.function.Supplier;
 
-public class SvarInnMeldingParser {
+public class FiksIOMeldingParser {
 
     public static MottattMeldingMetadata parse(@NonNull GetResponse getResponse) {
         return parse(getResponse.getEnvelope(), getResponse.getProps());
@@ -18,11 +18,11 @@ public class SvarInnMeldingParser {
 
     public static MottattMeldingMetadata parse(@NonNull Envelope envelope, @NonNull AMQP.BasicProperties properties) {
         return MottattMeldingMetadata.builder()
-                .meldingId(requireUUIDFromHeader(properties.getHeaders(), SvarInn2Headers.MELDING_ID))
-                .meldingType(requireStringFromHeader(properties.getHeaders(), SvarInn2Headers.MELDING_TYPE))
-                .avsenderKontoId(requireUUIDFromHeader(properties.getHeaders(), SvarInn2Headers.AVSENDER_ID))
-                .mottakerKontoId(SvarInn2Headers.extractKontoId(envelope.getRoutingKey()))
-                .svarPaMelding(getUUIDFromHeader(properties.getHeaders(), SvarInn2Headers.SVAR_PA_MELDING_ID).getOrElse(() -> null))
+                .meldingId(requireUUIDFromHeader(properties.getHeaders(), FiksIOHeaders.MELDING_ID))
+                .meldingType(requireStringFromHeader(properties.getHeaders(), FiksIOHeaders.MELDING_TYPE))
+                .avsenderKontoId(requireUUIDFromHeader(properties.getHeaders(), FiksIOHeaders.AVSENDER_ID))
+                .mottakerKontoId(FiksIOHeaders.extractKontoId(envelope.getRoutingKey()))
+                .svarPaMelding(getUUIDFromHeader(properties.getHeaders(), FiksIOHeaders.SVAR_PA_MELDING_ID).getOrElse(() -> null))
                 .deliveryTag(envelope.getDeliveryTag())
                 .ttl(Long.valueOf(properties.getExpiration()))
                 .build();
@@ -45,7 +45,7 @@ public class SvarInnMeldingParser {
     }
 
     private static Supplier<RuntimeException> getMissingHeaderException(Map<String, Object> headers, String rabbitMqHeader) {
-        return () -> new RuntimeException(String.format("Melding %s har mangler header %s, eller header verdi er ikke satt", getUUIDFromHeader(headers, SvarInn2Headers.MELDING_ID).getOrElse(() -> null), rabbitMqHeader));
+        return () -> new RuntimeException(String.format("Melding %s har mangler header %s, eller header verdi er ikke satt", getUUIDFromHeader(headers, FiksIOHeaders.MELDING_ID).getOrElse(() -> null), rabbitMqHeader));
     }
 
 }

@@ -1,10 +1,10 @@
-package no.ks.fiks.svarinn2.commons;
+package no.ks.fiks.io.commons;
 
 import lombok.NonNull;
 
 import java.util.UUID;
 
-public final class SvarInn2Headers {
+public final class FiksIOHeaders {
     public static final String AVSENDER_ID = "avsender-id";
     public static final String MELDING_ID = "melding-id";
     public static final String AVSENDER_NAVN = "avsender-navn";

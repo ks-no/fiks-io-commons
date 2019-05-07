@@ -1,4 +1,4 @@
-package no.ks.fiks.svarinn2.commons;
+package no.ks.fiks.io.commons;
 
 import org.junit.jupiter.api.Test;
 
@@ -6,17 +6,17 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SvarInn2HeadersTest {
+class FiksIOHeadersTest {
     @Test
     void getKontoQueueName() {
         UUID kontoId = UUID.randomUUID();
-        assertEquals("fiksio.konto." + kontoId, SvarInn2Headers.getKontoQueueName(kontoId));
+        assertEquals("fiksio.konto." + kontoId, FiksIOHeaders.getKontoQueueName(kontoId));
     }
 
     @Test
     void extractKontoId() {
         UUID kontoId = UUID.randomUUID();
-        assertEquals(kontoId, SvarInn2Headers.extractKontoId("fiksio.konto." + kontoId));
+        assertEquals(kontoId, FiksIOHeaders.extractKontoId("fiksio.konto." + kontoId));
     }
 
 }
