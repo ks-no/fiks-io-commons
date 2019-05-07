@@ -1,2 +1,2 @@
-# svarinn2-commons
-Modeller for beskrivelse av melding-metadata i SvarInn2
+# fiks-io-commons
+Modeller for beskrivelse av melding-metadata i FIKS IO
