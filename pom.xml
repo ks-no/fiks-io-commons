@@ -19,11 +19,11 @@
     <url>https://github.com/ks-no/fiks-svarinn2-send-klient</url>
   </scm>
   <properties>
-    <revision>1.1.0</revision>
+    <revision>1.1.1</revision>
     <changelist>-SNAPSHOT</changelist>
     <vavr.version>0.10.0</vavr.version>
-    <junit-jupiter.version>5.4.2</junit-jupiter.version>
     <lombok.version>1.16.18</lombok.version>
+    <junit-jupiter.version>5.4.2</junit-jupiter.version>
     <amqp-client.version>5.7.0</amqp-client.version>
   </properties>
   <dependencies>
