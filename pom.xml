@@ -12,11 +12,11 @@
   <version>${revision}${changelist}</version>
   <name>FIKS IO Commons</name>
   <description>Konstanter og utils for FIKS IO-klienter</description>
-  <url>https://github.com/ks-no/fiks-svarinn2</url>
+  <url>https://github.com/ks-no/fiks-io-commons</url>
   <scm>
-    <connection>scm:git:git@github.com:ks-no/fiks-svarinn2-send-klient.git</connection>
-    <developerConnection>scm:git:git@github.com:ks-no/fiks-svarinn2-send-klient.git</developerConnection>
-    <url>https://github.com/ks-no/fiks-svarinn2-send-klient</url>
+    <connection>scm:git:git@github.com:ks-no/fiks-io-commons.git</connection>
+    <developerConnection>scm:git:git@github.com:ks-no/fiks-io-commons.git</developerConnection>
+    <url>https://github.com/ks-no/fiks-io-commons</url>
   </scm>
   <properties>
     <revision>1.1.1</revision>
