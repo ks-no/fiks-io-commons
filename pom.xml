@@ -19,11 +19,11 @@
     <url>https://github.com/ks-no/fiks-io-commons</url>
   </scm>
   <properties>
-    <revision>1.2.0</revision>
+    <revision>1.2.1</revision>
     <changelist>-SNAPSHOT</changelist>
     <vavr.version>0.10.0</vavr.version>
-    <lombok.version>1.16.18</lombok.version>
     <junit-jupiter.version>5.4.2</junit-jupiter.version>
+    <lombok.version>1.16.18</lombok.version>
     <amqp-client.version>5.7.0</amqp-client.version>
   </properties>
   <dependencies>
