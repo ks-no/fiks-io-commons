@@ -21,7 +21,7 @@
   <properties>
     <revision>1.2.1</revision>
     <changelist>-SNAPSHOT</changelist>
-    <vavr.version>0.10.0</vavr.version>
+    <vavr.version>0.10.2</vavr.version>
     <junit-jupiter.version>5.4.2</junit-jupiter.version>
     <lombok.version>1.16.18</lombok.version>
     <amqp-client.version>5.7.0</amqp-client.version>
