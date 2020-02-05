@@ -25,6 +25,7 @@ public class FiksIOMeldingParser {
                 .svarPaMelding(getUUIDFromHeader(properties.getHeaders(), FiksIOHeaders.SVAR_PA_MELDING_ID).getOrElse(() -> null))
                 .deliveryTag(envelope.getDeliveryTag())
                 .ttl(properties.getExpiration() != null ? Long.valueOf(properties.getExpiration()): -1L)
+                .headere(FiksIOHeaders.extractEgendefinerteHeadere(properties.getHeaders()))
                 .build();
     }
 
