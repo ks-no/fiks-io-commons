@@ -26,6 +26,7 @@ public class FiksIOMeldingParser {
                 .deliveryTag(envelope.getDeliveryTag())
                 .ttl(properties.getExpiration() != null ? Long.valueOf(properties.getExpiration()): -1L)
                 .headere(FiksIOHeaders.extractEgendefinerteHeadere(properties.getHeaders()))
+                .resendt(envelope.isRedeliver())
                 .build();
     }
 
