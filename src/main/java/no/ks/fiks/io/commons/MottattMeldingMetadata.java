@@ -18,4 +18,6 @@ public class MottattMeldingMetadata {
     @NonNull private Long deliveryTag;
     private UUID svarPaMelding;
     private Map<String, String> headere;
+    @Builder.Default
+    private boolean resendt = false;
 }

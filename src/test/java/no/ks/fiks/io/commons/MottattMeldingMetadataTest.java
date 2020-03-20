@@ -22,6 +22,7 @@ class MottattMeldingMetadataTest {
                 .meldingId(UUID.randomUUID())
                 .meldingType("type")
                 .mottakerKontoId(UUID.randomUUID())
+                .resendt(true)
                 .ttl(20000L)
                 .svarPaMelding(UUID.randomUUID())
                 .headere(Collections.emptyMap())
