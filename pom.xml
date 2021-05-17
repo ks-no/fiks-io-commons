@@ -33,7 +33,7 @@
     <amqp-client.version>5.7.0</amqp-client.version>
     <junit-platform-commons.version>1.6.0</junit-platform-commons.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
-    <junit-jupiter.version>5.6.0</junit-jupiter.version>
+    <junit-jupiter.version>5.7.2</junit-jupiter.version>
   </properties>
   <dependencies>
     <dependency>
