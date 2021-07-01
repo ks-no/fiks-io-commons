@@ -9,7 +9,7 @@
   </parent>
   <groupId>no.ks.fiks</groupId>
   <artifactId>fiks-io-commons</artifactId>
-  <version>1.3.0-SNAPSHOT</version>
+  <version>1.3.0</version>
   <name>FIKS IO Commons</name>
   <description>Konstanter og utils for FIKS IO-klienter</description>
   <url>https://github.com/ks-no/fiks-io-commons</url>
