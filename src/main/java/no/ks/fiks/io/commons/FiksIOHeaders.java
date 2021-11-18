@@ -14,7 +14,7 @@ public final class FiksIOHeaders {
     public static final String MELDING_TYPE = "type";
     public static final String DOKUMENTLAGER_ID = "dokumentlager-id";
     public static final String SVAR_PA_MELDING_ID = "svar-til";
-
+    public static final String SVAR_PA_MELDING_TYPE = "svar-til-type";
     public static final String KONTO_QUEUE_NAME_PREFIX = "fiksio.konto.";
     public static final String EGENDEFINERT_HEADER_PREFIX = "egendefinert-header.";
 
