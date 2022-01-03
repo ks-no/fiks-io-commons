@@ -28,7 +28,7 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jackson-databind.version>2.13.0</jackson-databind.version>
-    <amqp-client.version>5.12.0</amqp-client.version>
+    <amqp-client.version>5.14.0</amqp-client.version>
     <junit-platform-commons.version>1.8.1</junit-platform-commons.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <junit-jupiter.version>5.8.1</junit-jupiter.version>
