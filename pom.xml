@@ -19,18 +19,21 @@
     <url>https://github.com/ks-no/fiks-io-commons</url>
   </scm>
   <properties>
+    <java.version>11</java.version>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+
     <lombok.version>1.18.24</lombok.version>
     <vavr.version>0.10.4</vavr.version>
-    <java.version>1.8</java.version>
-    <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
     <guava.version>31.1-jre</guava.version>
-    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-    <maven.compiler.target>${java.version}</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jackson-databind.version>2.13.3</jackson-databind.version>
     <amqp-client.version>5.15.0</amqp-client.version>
+
     <junit-platform-commons.version>1.8.2</junit-platform-commons.version>
-    <maven.compiler.source>${java.version}</maven.compiler.source>
     <junit-jupiter.version>5.8.2</junit-jupiter.version>
   </properties>
   <dependencies>
