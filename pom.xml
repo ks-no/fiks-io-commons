@@ -31,7 +31,7 @@
     <vavr.version>0.10.4</vavr.version>
     <guava.version>31.1-jre</guava.version>
     <jackson-databind.version>2.13.3</jackson-databind.version>
-    <amqp-client.version>5.15.0</amqp-client.version>
+    <amqp-client.version>5.16.0</amqp-client.version>
 
     <junit-platform-commons.version>1.9.0</junit-platform-commons.version>
     <junit-jupiter.version>5.9.0</junit-jupiter.version>
