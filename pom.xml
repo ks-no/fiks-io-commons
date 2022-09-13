@@ -28,7 +28,6 @@
     <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 
     <lombok.version>1.18.24</lombok.version>
-    <vavr.version>0.10.4</vavr.version>
     <guava.version>31.1-jre</guava.version>
     <jackson-databind.version>2.13.3</jackson-databind.version>
     <amqp-client.version>5.15.0</amqp-client.version>
@@ -47,11 +46,7 @@
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>${lombok.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>io.vavr</groupId>
-      <artifactId>vavr</artifactId>
-      <version>${vavr.version}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
