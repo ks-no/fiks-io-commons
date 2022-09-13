@@ -1,12 +1,11 @@
 package no.ks.fiks.io.commons;
 
-import io.vavr.collection.HashMap;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FiksIOHeadersTest {
     @Test
@@ -30,10 +29,10 @@ class FiksIOHeadersTest {
 
     @Test
     void extractEgendefinerteHeadere() {
-        Map<String, Object> headere = HashMap.<String, Object>of(
+        Map<String, Object> headere = Map.of(
                 FiksIOHeaders.getEgendefinertHeaderName("min_header"), "min_verdi",
                 FiksIOHeaders.AVSENDER_ID, UUID.randomUUID().toString()
-        ).toJavaMap();
+        );
         Map<String, String> egendefinerteHeadere = FiksIOHeaders.extractEgendefinerteHeadere(headere);
         assertEquals(1, egendefinerteHeadere.size());
         assertEquals("min_verdi", egendefinerteHeadere.get("min_header"));
