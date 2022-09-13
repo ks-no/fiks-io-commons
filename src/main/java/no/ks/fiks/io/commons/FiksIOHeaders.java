@@ -1,11 +1,10 @@
 package no.ks.fiks.io.commons;
 
-import io.vavr.Tuple;
-import io.vavr.collection.HashMap;
 import lombok.NonNull;
 
 import java.util.Map;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public final class FiksIOHeaders {
     public static final String AVSENDER_ID = "avsender-id";
@@ -34,8 +33,8 @@ public final class FiksIOHeaders {
     }
 
     public static Map<String, String> extractEgendefinerteHeadere(Map<String, Object> headers) {
-        return HashMap.ofAll(headers)
-                .filter(tuple -> tuple._1.startsWith(EGENDEFINERT_HEADER_PREFIX))
-                .toJavaMap(tuple -> Tuple.of(tuple._1.substring(EGENDEFINERT_HEADER_PREFIX.length()), tuple._2.toString()));
+        return headers.entrySet().stream()
+                .filter(entry -> entry.getKey().startsWith(EGENDEFINERT_HEADER_PREFIX))
+                .collect(Collectors.toMap(e -> e.getKey().substring(EGENDEFINERT_HEADER_PREFIX.length()), v -> v.getValue().toString()));
     }
 }
