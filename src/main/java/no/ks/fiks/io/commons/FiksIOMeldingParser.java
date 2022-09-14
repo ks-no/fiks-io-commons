@@ -39,7 +39,7 @@ public class FiksIOMeldingParser {
     }
 
     private static Optional<String> getStringFromHeader(Map<String, Object> headers, String header) {
-        return Optional.of(headers.get(header)).map(Object::toString);
+        return Optional.ofNullable(headers.get(header)).map(Object::toString);
     }
 
     private static String requireStringFromHeader(Map<String, Object> headers, String header) {
