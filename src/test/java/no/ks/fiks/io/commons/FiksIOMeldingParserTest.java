@@ -54,6 +54,40 @@ class FiksIOMeldingParserTest {
 
     }
 
+    @DisplayName("Har ikke svar-til")
+    @Test
+    void parserMenManglerSvarPaa() {
+        final UUID mottakerKonto = UUID.randomUUID();
+        final UUID meldingId = UUID.randomUUID();
+        final UUID avsenderKonto = UUID.randomUUID();
+        final long experiation = 10_000L;
+        final String meldingType = "meldingType";
+        final String egenHeaderNavn = "egenHeader";
+
+        final Envelope envelope = new Envelope(Long.MAX_VALUE, true, "exchange", FiksIOHeaders.KONTO_QUEUE_NAME_PREFIX + mottakerKonto.toString());
+        final AMQP.BasicProperties properties = new AMQP.BasicProperties.Builder().appId("appId")
+                .headers(ImmutableMap.<String, Object>builder()
+                        .put(FiksIOHeaders.MELDING_ID, meldingId.toString())
+                        .put(FiksIOHeaders.MELDING_TYPE, meldingType)
+                        .put(FiksIOHeaders.AVSENDER_ID, avsenderKonto.toString())
+                        .put(FiksIOHeaders.EGENDEFINERT_HEADER_PREFIX + egenHeaderNavn, "EgenVerdi")
+                        .build())
+                .expiration(Long.toString(experiation))
+                .build();
+
+
+        final MottattMeldingMetadata mottattMeldingMetadata = FiksIOMeldingParser.parse(new GetResponse(envelope, properties, new byte[]{}, 1));
+        assertNotNull(mottattMeldingMetadata);
+        assertEquals(mottakerKonto, mottattMeldingMetadata.getMottakerKontoId());
+        assertEquals(avsenderKonto, mottattMeldingMetadata.getAvsenderKontoId());
+        assertEquals(meldingId, mottattMeldingMetadata.getMeldingId());
+        assertEquals(meldingType, mottattMeldingMetadata.getMeldingType());
+        assertEquals(envelope.getDeliveryTag(), mottattMeldingMetadata.getDeliveryTag().longValue());
+        assertEquals(experiation, mottattMeldingMetadata.getTtl().longValue());
+        assertEquals(envelope.isRedeliver(), mottattMeldingMetadata.isResendt());
+        assertNotNull(mottattMeldingMetadata.getHeadere().get(egenHeaderNavn));
+    }
+
     @DisplayName("Mangler påkrevd header")
     @Test
     void manglerHeader() {
