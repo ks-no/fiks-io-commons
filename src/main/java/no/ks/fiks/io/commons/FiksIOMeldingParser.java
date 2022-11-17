@@ -24,7 +24,7 @@ public class FiksIOMeldingParser {
                 .mottakerKontoId(FiksIOHeaders.extractKontoId(envelope.getRoutingKey()))
                 .svarPaMelding(getUUIDFromHeader(properties.getHeaders(), FiksIOHeaders.SVAR_PA_MELDING_ID).orElse(null))
                 .deliveryTag(envelope.getDeliveryTag())
-                .ttl(properties.getExpiration() != null ? Long.valueOf(properties.getExpiration()) : -1L)
+                .ttl(Optional.ofNullable(properties.getExpiration()).map(Long::valueOf).orElse(null))
                 .headere(FiksIOHeaders.extractEgendefinerteHeadere(properties.getHeaders()))
                 .resendt(envelope.isRedeliver())
                 .build();
