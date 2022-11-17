@@ -14,7 +14,7 @@ public class MottattMeldingMetadata {
     @NonNull private String meldingType;
     @NonNull private UUID avsenderKontoId;
     @NonNull private UUID mottakerKontoId;
-    @NonNull private Long ttl;
+    private Long ttl;
     @NonNull private Long deliveryTag;
     private UUID svarPaMelding;
     private Map<String, String> headere;
