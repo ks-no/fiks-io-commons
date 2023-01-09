@@ -1,4 +1,4 @@
 # fiks-io-commons
 Modeller for beskrivelse av melding-metadata i FIKS IO
 
-Standard branch er _main_
+Standard branch er `main`
