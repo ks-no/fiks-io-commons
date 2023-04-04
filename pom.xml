@@ -5,7 +5,7 @@
   <parent>
     <groupId>no.ks.fiks.pom</groupId>
     <artifactId>fiks-ekstern-super-pom</artifactId>
-    <version>1.0.20</version>
+    <version>1.0.21</version>
   </parent>
   <groupId>no.ks.fiks</groupId>
   <artifactId>fiks-io-commons</artifactId>
@@ -24,16 +24,16 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+    <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
 
-    <lombok.version>1.18.24</lombok.version>
+    <lombok.version>1.18.26</lombok.version>
     <guava.version>31.1-jre</guava.version>
-    <jackson-databind.version>2.14.1</jackson-databind.version>
-    <amqp-client.version>5.16.0</amqp-client.version>
+    <jackson-databind.version>2.14.2</jackson-databind.version>
+    <amqp-client.version>5.17.0</amqp-client.version>
 
-    <junit-platform-commons.version>1.9.1</junit-platform-commons.version>
-    <junit-jupiter.version>5.9.1</junit-jupiter.version>
+    <junit-platform-commons.version>1.9.2</junit-platform-commons.version>
+    <junit-jupiter.version>5.9.2</junit-jupiter.version>
   </properties>
   <dependencies>
     <dependency>
