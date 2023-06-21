@@ -30,7 +30,7 @@
     <lombok.version>1.18.26</lombok.version>
     <guava.version>31.1-jre</guava.version>
     <jackson-databind.version>2.14.2</jackson-databind.version>
-    <amqp-client.version>5.17.0</amqp-client.version>
+    <amqp-client.version>5.18.0</amqp-client.version>
 
     <junit-platform-commons.version>1.9.2</junit-platform-commons.version>
     <junit-jupiter.version>5.9.2</junit-jupiter.version>
