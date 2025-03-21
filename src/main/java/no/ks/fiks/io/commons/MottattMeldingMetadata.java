@@ -17,7 +17,10 @@ public class MottattMeldingMetadata {
     private Long ttl;
     @NonNull private Long deliveryTag;
     private UUID svarPaMelding;
+    private UUID klientMeldingId;
+    private String klientKorrelasjonsid;
     private Map<String, String> headere;
     @Builder.Default
     private boolean resendt = false;
+
 }
