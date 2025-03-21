@@ -16,6 +16,8 @@ public final class FiksIOHeaders {
     public static final String SVAR_PA_MELDING_TYPE = "svar-til-type";
     public static final String KONTO_QUEUE_NAME_PREFIX = "fiksio.konto.";
     public static final String EGENDEFINERT_HEADER_PREFIX = "egendefinert-header.";
+    public static final String KLIENT_MELDING_ID = "klientMeldingId";
+    public static final String KLIENT_KORRELASJONSID = "klient-korrelasjonsid";
 
     public static String getKontoQueueName(@NonNull UUID kontoId){
         return KONTO_QUEUE_NAME_PREFIX + kontoId;
