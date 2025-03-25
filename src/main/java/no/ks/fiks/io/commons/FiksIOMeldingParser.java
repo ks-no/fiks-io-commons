@@ -23,8 +23,6 @@ public class FiksIOMeldingParser {
                 .avsenderKontoId(requireUUIDFromHeader(properties.getHeaders(), FiksIOHeaders.AVSENDER_ID))
                 .mottakerKontoId(FiksIOHeaders.extractKontoId(envelope.getRoutingKey()))
                 .svarPaMelding(getUUIDFromHeader(properties.getHeaders(), FiksIOHeaders.SVAR_PA_MELDING_ID).orElse(null))
-                .klientMeldingId(getUUIDFromHeader(properties.getHeaders(), FiksIOHeaders.KLIENT_MELDING_ID).orElse(null))
-                .klientKorrelasjonsid(getStringFromHeader(properties.getHeaders(), FiksIOHeaders.KLIENT_KORRELASJONSID).orElse(null))
                 .deliveryTag(envelope.getDeliveryTag())
                 .ttl(Optional.ofNullable(properties.getExpiration()).map(Long::valueOf).orElse(null))
                 .headere(FiksIOHeaders.extractEgendefinerteHeadere(properties.getHeaders()))

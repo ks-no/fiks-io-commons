@@ -35,8 +35,7 @@ class FiksIOMeldingParserTest {
                         .put(FiksIOHeaders.MELDING_TYPE, meldingType)
                         .put(FiksIOHeaders.AVSENDER_ID, avsenderKonto.toString())
                         .put(FiksIOHeaders.SVAR_PA_MELDING_ID, svarPaMeldingId.toString())
-                        .put(FiksIOHeaders.KLIENT_MELDING_ID, klientMeldingId)
-                        .put(FiksIOHeaders.KLIENT_KORRELASJONSID, klientKorrelasjonsid.toString())
+                        .put(FiksIOHeaders.EGENDEFINERT_HEADER_PREFIX + FiksIOHeaders.EGENDEFINERT_KLIENT_KORRELASJONSID, klientKorrelasjonsid.toString())
                         .put(FiksIOHeaders.EGENDEFINERT_HEADER_PREFIX + egenHeaderNavn, "EgenVerdi")
                         .build())
                 .expiration(Long.toString(experiation))
@@ -55,8 +54,7 @@ class FiksIOMeldingParserTest {
         assertEquals(experiation, mottattMeldingMetadata.getTtl().longValue());
         assertEquals(envelope.isRedeliver(), mottattMeldingMetadata.isResendt());
         assertNotNull(mottattMeldingMetadata.getHeadere().get(egenHeaderNavn));
-        assertEquals(klientMeldingId, mottattMeldingMetadata.getKlientMeldingId());
-        assertEquals(klientKorrelasjonsid, mottattMeldingMetadata.getKlientKorrelasjonsid());
+        assertEquals(klientKorrelasjonsid, mottattMeldingMetadata.getHeadere().get(FiksIOHeaders.EGENDEFINERT_KLIENT_KORRELASJONSID).toString());
         assertNotNull(mottattMeldingMetadata.getHeadere().get(egenHeaderNavn));
 
     }
