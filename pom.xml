@@ -32,7 +32,7 @@
     <jackson-databind.version>2.19.2</jackson-databind.version>
     <amqp-client.version>5.25.0</amqp-client.version>
 
-    <junit-platform-commons.version>1.13.3</junit-platform-commons.version>
+    <junit-platform-commons.version>1.13.4</junit-platform-commons.version>
     <junit-jupiter.version>5.13.3</junit-jupiter.version>
   </properties>
   <dependencies>
