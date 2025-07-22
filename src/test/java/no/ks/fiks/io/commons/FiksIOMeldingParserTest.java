@@ -22,6 +22,8 @@ class FiksIOMeldingParserTest {
         final UUID meldingId = UUID.randomUUID();
         final UUID avsenderKonto = UUID.randomUUID();
         final UUID svarPaMeldingId = UUID.randomUUID();
+        final UUID klientMeldingId = UUID.randomUUID();
+        final String klientKorrelasjonsid = UUID.randomUUID().toString();
         final long experiation = 10_000L;
         final String meldingType = "meldingType";
         final String egenHeaderNavn = "egenHeader";
@@ -33,6 +35,7 @@ class FiksIOMeldingParserTest {
                         .put(FiksIOHeaders.MELDING_TYPE, meldingType)
                         .put(FiksIOHeaders.AVSENDER_ID, avsenderKonto.toString())
                         .put(FiksIOHeaders.SVAR_PA_MELDING_ID, svarPaMeldingId.toString())
+                        .put(FiksIOHeaders.EGENDEFINERT_HEADER_PREFIX + FiksIOHeaders.EGENDEFINERT_KLIENT_KORRELASJONSID, klientKorrelasjonsid.toString())
                         .put(FiksIOHeaders.EGENDEFINERT_HEADER_PREFIX + egenHeaderNavn, "EgenVerdi")
                         .build())
                 .expiration(Long.toString(experiation))
@@ -51,12 +54,14 @@ class FiksIOMeldingParserTest {
         assertEquals(experiation, mottattMeldingMetadata.getTtl().longValue());
         assertEquals(envelope.isRedeliver(), mottattMeldingMetadata.isResendt());
         assertNotNull(mottattMeldingMetadata.getHeadere().get(egenHeaderNavn));
+        assertEquals(klientKorrelasjonsid, mottattMeldingMetadata.getHeadere().get(FiksIOHeaders.EGENDEFINERT_KLIENT_KORRELASJONSID).toString());
+        assertNotNull(mottattMeldingMetadata.getHeadere().get(egenHeaderNavn));
 
     }
 
-    @DisplayName("Har ikke svar-til")
+    @DisplayName("Har ikke svar-til, klientMeldingId eller klient-korrelasjonsid")
     @Test
-    void parserMenManglerSvarPaa() {
+    void parserUtenIkkePaakrevdeHeadere() {
         final UUID mottakerKonto = UUID.randomUUID();
         final UUID meldingId = UUID.randomUUID();
         final UUID avsenderKonto = UUID.randomUUID();

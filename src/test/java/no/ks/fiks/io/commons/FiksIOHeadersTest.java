@@ -23,7 +23,12 @@ class FiksIOHeadersTest {
     @Test
     void getEgendefinertHeaderName() {
         String name = UUID.randomUUID().toString();
-        String value = UUID.randomUUID().toString();
+        assertEquals(FiksIOHeaders.EGENDEFINERT_HEADER_PREFIX + name, FiksIOHeaders.getEgendefinertHeaderName(name));
+    }
+
+    @Test
+    void getEgendefinertHeaderKlientKorrelasjonsid() {
+        String name = FiksIOHeaders.EGENDEFINERT_KLIENT_KORRELASJONSID;
         assertEquals(FiksIOHeaders.EGENDEFINERT_HEADER_PREFIX + name, FiksIOHeaders.getEgendefinertHeaderName(name));
     }
 

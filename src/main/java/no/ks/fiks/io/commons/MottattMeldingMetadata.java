@@ -20,4 +20,5 @@ public class MottattMeldingMetadata {
     private Map<String, String> headere;
     @Builder.Default
     private boolean resendt = false;
+
 }
