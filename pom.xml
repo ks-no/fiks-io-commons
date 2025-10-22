@@ -28,7 +28,7 @@
     <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
 
     <lombok.version>1.18.40</lombok.version>
-    <guava.version>33.4.8-jre</guava.version>
+    <guava.version>33.5.0-jre</guava.version>
     <jackson-databind.version>2.20.0</jackson-databind.version>
     <amqp-client.version>5.26.0</amqp-client.version>
 
